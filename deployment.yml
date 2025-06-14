@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-exam-app
+  labels:
+    app: devops-exam-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-exam-app
+  template:
+    metadata:
+      labels:
+        app: devops-exam-app
+    spec:
+      containers:
+        - name: devops-exam-app
+          image: rony1993/devopsexamapp:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MYSQL_HOST
+              value: mysql
+            - name: MYSQL_USER
+              value: root
+            - name: MYSQL_PASSWORD
+              value: rootpass
+            - name: MYSQL_DB
+              value: employee
