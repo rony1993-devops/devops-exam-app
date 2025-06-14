@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-exam-service
+  labels:
+    app: devops-exam-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: devops-exam-app
+  ports:
+    - protocol: TCP
+      port: 80              # Exposed on LoadBalancer's public IP
+      targetPort: 5000      # Container port where Flask app is running
