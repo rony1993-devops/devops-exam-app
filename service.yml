@@ -10,5 +10,5 @@ spec:
     app: devops-exam-app
   ports:
     - protocol: TCP
-      port: 80              # Exposed on LoadBalancer's public IP
-      targetPort: 5000      # Container port where Flask app is running
+      port: 80              
+      targetPort: 5000      
